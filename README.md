@@ -1,42 +1,40 @@
-# ai-dev-exp-template
+# Day062 — 手土産かぶりほどき
 
-Vite-based single-page template for `ai-dev-day-XXX` repositories.
+> 手土産候補のかぶりと不足を整えやすくするためのツールです。
+>
+> Complexity Tier: medium
+>
+> Selected Components: none
+>
+> Family / Mechanic: gift_overlap_assignment / coverage_assign
+>
+> Input -> Output: participant_rows -> assignment_board
+>
+> Audience Promise: 持っていく物と担当をその場で決められる。
 
-## Required meta.json fields
+## 使い方
 
-- `day` (e.g. `Day001`)
-- `title`
-- `description`
-- `genre`
-- `theme`
-- `story_summary`
+このツールでできること
+手土産候補のかぶりと不足を整えやすくするためのツールです。
 
-## Theme behavior
+こんな時に使います
+複数人で手土産を持つ前に何を誰が持つか決めたい時に使います。
 
-- `src/themes.js` defines 8 visual themes.
-- Runtime applies `meta.json.theme` using CSS variables.
-- Day repos should set `theme` with a day-seeded deterministic selector.
+使い方
+1. 参加者を入れる
+2. 候補を足す
+3. 担当割り当てを見る
 
-## Component Packs (tiered build)
+## Story
 
-- Template reads `complexity_tier` / `selected_components` from `meta.json`.
-- `selected_components` is missing: runs as small tier baseline with all packs OFF.
-- Unknown component names are ignored safely.
-- Each pack can be toggled independently and app core flow still works.
+- [制作ストーリー](./STORY.md)
+- Complexity hint: Implement the locked brief with one clear hero interaction and keep the main screenshot readable.
+- Publish hook: 候補・予算・避けたい食材を自分で入れると、かぶりと不足が一画面で見えて担当まで決まる。
 
-Supported packs:
+## Demo
 
-- `reason_panel`
-- `sample_inputs`
-- `local_storage`
-- `comparison_view`
-- `history_panel`
-- `export_suite`
-- `step_ui`
+🌐 [GitHub Pages](https://ryo909.github.io/ai-dev-day-062/)
 
-### Quality/Fallback integration
+---
 
-- Every pack root includes `data-quality-marker="<pack_name>"` for evaluator detection.
-- Runtime manifest is published to `window.__COMPONENT_PACKS__` and script node `#componentPackManifest`.
-- Static fallback manifest exists at `public/component-pack-manifest.json`.
-- Medium/Large can increase visual depth safely by selecting more packs without changing core logic.
+Day062 / #100日開発
